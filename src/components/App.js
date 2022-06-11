@@ -34,7 +34,6 @@ function App() {
     .then((q)=> setQuestions(q))
   },[])
 
-  // console.log(questions)
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />

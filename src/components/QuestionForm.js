@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function QuestionForm(props) {
   const [formData, setFormData] = useState({
@@ -10,8 +10,6 @@ function QuestionForm(props) {
     correctIndex: 0,
   });
 
-  // console.log(props)
-
   function handleChange(event) {
     setFormData({
       ...formData,
@@ -19,21 +17,8 @@ function QuestionForm(props) {
     });
   }
 
-  // useEffect(()=>{
-  //   console.log(formData.correctIndex)
-  // }, [handleChange])
-
   function handleSubmit(event) {
     event.preventDefault();
-    // console.log(event.target)
-    // setFormData({
-    //   prompt: "",
-    //   answer1: "",
-    //   answer2: "",
-    //   answer3: "",
-    //   answer4: "",
-    //   correctIndex: 0,
-    // })
     
     const itemData = {
       prompt: event.target.prompt,

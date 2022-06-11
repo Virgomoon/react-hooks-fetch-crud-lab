@@ -2,7 +2,6 @@ import React from "react";
 import QuestionItem from "./QuestionItem"
 
 function QuestionList({questions, onDelete, onUpdate}) {
-// console.log(questions)
 
   return (
     <section>
