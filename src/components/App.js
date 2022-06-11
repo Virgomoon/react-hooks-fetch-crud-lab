@@ -22,7 +22,7 @@ function App() {
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? <QuestionForm /> : <QuestionList onAddQuestion={addQuestion} questions={questions} />}
+      {page === "Form" ? <QuestionForm onAddQuestion={addQuestion} /> : <QuestionList  questions={questions} />}
     </main>
   );
 }

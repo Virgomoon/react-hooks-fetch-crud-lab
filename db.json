@@ -68,21 +68,14 @@
     },
     {
       "prompt": "is it true?",
-      "answer1": "Yes",
-      "answer2": "No",
-      "answer3": "Maybe",
-      "answer4": "Don't know",
+      "answers": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Don't know"
+      ],
       "correctIndex": "0",
       "id": 7
-    },
-    {
-      "prompt": "is it true?",
-      "answer1": "Yes",
-      "answer2": "No",
-      "answer3": "Maybe",
-      "answer4": "Don't know",
-      "correctIndex": "0",
-      "id": 8
     }
   ]
 }

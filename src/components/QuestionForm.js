@@ -10,7 +10,7 @@ function QuestionForm(props) {
     correctIndex: 0,
   });
 
-  // console.log(props)
+  console.log(props)
 
   function handleChange(event) {
     setFormData({
@@ -19,7 +19,7 @@ function QuestionForm(props) {
     });
   }
 
-  console.log(formData)
+  // console.log(formData)
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -35,10 +35,12 @@ function QuestionForm(props) {
     
     const itemData = {
       prompt: event.target.prompt.value,
-      answer1: event.target.answer1.value,
-      answer2: event.target.answer2.value,
-      answer3: event.target.answer3.value,
-      answer4: event.target.answer4.value,
+      answers: [ 
+        event.target.answer1.value,
+        event.target.answer2.value,
+        event.target.answer3.value,
+        event.target.answer4.value,
+      ],
       correctIndex: event.target.correctIndex.value,
     }
     
@@ -50,7 +52,7 @@ function QuestionForm(props) {
       body: JSON.stringify(itemData)
     })
       .then((res)=> res.json())
-      .then((newItem)=>console.log(newItem)) 
+      .then((newItem)=>props.onAddQuestion(newItem)) 
   }
 
   return (
