@@ -21,15 +21,25 @@ function QuestionForm(props) {
     event.preventDefault();
     
     const itemData = {
-      prompt: event.target.prompt,
+      prompt: event.target.prompt.value,
       answers: [ 
-        event.target.answer1,
-        event.target.answer2,
-        event.target.answer3,
-        event.target.answer4,
+        event.target.answer1.value,
+        event.target.answer2.value,
+        event.target.answer3.value,
+        event.target.answer4.value,
       ],
-      correctIndex: event.target.correctIndex,
+      correctIndex: event.target.correctIndex.value,
     }
+
+    setFormData({
+      prompt: "",
+      answer1: "",
+      answer2: "",
+      answer3: "",
+      answer4: "",
+      correctIndex: 0,
+  })
+    console.log(itemData)
     
     fetch("http://localhost:4000/questions", {
       method: "POST",
