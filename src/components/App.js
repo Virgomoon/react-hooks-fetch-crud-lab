@@ -12,6 +12,11 @@ function App() {
     setQuestions([...questions, newItem])
   }
 
+  function deleteQuestion(liftedItem){
+    const updatedQuestions = questions.filter((item)=>item.id !== liftedItem.id)
+    setQuestions(updatedQuestions)
+  }
+
   useEffect(()=>{
     fetch("http://localhost:4000/questions")
     .then((res)=> res.json())
@@ -22,7 +27,10 @@ function App() {
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? <QuestionForm onAddQuestion={addQuestion} /> : <QuestionList  questions={questions} />}
+      {page === "Form" ? <QuestionForm onAddQuestion={addQuestion} /> 
+      : <QuestionList 
+          questions={questions} 
+          onDelete={deleteQuestion} />}
     </main>
   );
 }

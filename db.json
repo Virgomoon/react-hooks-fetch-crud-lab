@@ -65,17 +65,6 @@
         "controlled"
       ],
       "correctIndex": 1
-    },
-    {
-      "prompt": "is it true?",
-      "answers": [
-        "Yes",
-        "No",
-        "Maybe",
-        "Don't know"
-      ],
-      "correctIndex": "0",
-      "id": 7
     }
   ]
 }

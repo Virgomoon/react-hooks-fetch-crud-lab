@@ -1,7 +1,7 @@
 import React from "react";
 import QuestionItem from "./QuestionItem"
 
-function QuestionList({questions}) {
+function QuestionList({questions, onDelete}) {
 // console.log(questions)
 
   return (
@@ -12,6 +12,7 @@ function QuestionList({questions}) {
           <QuestionItem 
             key={question.id}
             question={question}
+            onDelete={onDelete}
           />
         )
       })}</ul>
