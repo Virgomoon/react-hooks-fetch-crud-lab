@@ -17,6 +17,17 @@ function App() {
     setQuestions(updatedQuestions)
   }
 
+  function updateAnswer(event){ 
+    const updatedQuestions = questions.map((item) =>{
+      if(item.id === event.id) {
+        return event
+      }else {
+        return item
+      }
+    })
+    setQuestions(updatedQuestions)
+  }
+
   useEffect(()=>{
     fetch("http://localhost:4000/questions")
     .then((res)=> res.json())
@@ -30,7 +41,8 @@ function App() {
       {page === "Form" ? <QuestionForm onAddQuestion={addQuestion} /> 
       : <QuestionList 
           questions={questions} 
-          onDelete={deleteQuestion} />}
+          onDelete={deleteQuestion}
+          onUpdate={updateAnswer} />}
     </main>
   );
 }

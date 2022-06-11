@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function QuestionForm(props) {
   const [formData, setFormData] = useState({
@@ -19,7 +19,9 @@ function QuestionForm(props) {
     });
   }
 
-  // console.log(formData)
+  // useEffect(()=>{
+  //   console.log(formData.correctIndex)
+  // }, [handleChange])
 
   function handleSubmit(event) {
     event.preventDefault();

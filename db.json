@@ -65,6 +65,28 @@
         "controlled"
       ],
       "correctIndex": 1
+    },
+    {
+      "prompt": "is it true?",
+      "answers": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Don't know"
+      ],
+      "correctIndex": "1",
+      "id": 7
+    },
+    {
+      "prompt": "is it true?",
+      "answers": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Don't know"
+      ],
+      "correctIndex": "2",
+      "id": 8
     }
   ]
 }
