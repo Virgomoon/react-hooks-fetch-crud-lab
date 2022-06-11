@@ -10,6 +10,8 @@ function QuestionForm(props) {
     correctIndex: 0,
   });
 
+  // console.log(props)
+
   function handleChange(event) {
     setFormData({
       ...formData,
@@ -17,9 +19,38 @@ function QuestionForm(props) {
     });
   }
 
+  console.log(formData)
+
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
+    console.log(event.target)
+    setFormData({
+      prompt: "",
+      answer1: "",
+      answer2: "",
+      answer3: "",
+      answer4: "",
+      correctIndex: 0,
+    })
+    
+    const itemData = {
+      prompt: event.target.prompt.value,
+      answer1: event.target.answer1.value,
+      answer2: event.target.answer2.value,
+      answer3: event.target.answer3.value,
+      answer4: event.target.answer4.value,
+      correctIndex: event.target.correctIndex.value,
+    }
+    
+    fetch("http://localhost:4000/questions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemData)
+    })
+      .then((res)=> res.json())
+      .then((newItem)=>console.log(newItem)) 
   }
 
   return (
