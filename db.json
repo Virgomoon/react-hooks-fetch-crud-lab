@@ -87,6 +87,17 @@
       ],
       "correctIndex": "2",
       "id": 8
+    },
+    {
+      "prompt": "How many Times?",
+      "answers": [
+        "once",
+        "twice",
+        "three times",
+        "a lady"
+      ],
+      "correctIndex": "3",
+      "id": 9
     }
   ]
 }

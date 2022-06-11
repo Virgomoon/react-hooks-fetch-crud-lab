@@ -10,7 +10,7 @@ function QuestionForm(props) {
     correctIndex: 0,
   });
 
-  console.log(props)
+  // console.log(props)
 
   function handleChange(event) {
     setFormData({
@@ -25,25 +25,25 @@ function QuestionForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event.target)
-    setFormData({
-      prompt: "",
-      answer1: "",
-      answer2: "",
-      answer3: "",
-      answer4: "",
-      correctIndex: 0,
-    })
+    // console.log(event.target)
+    // setFormData({
+    //   prompt: "",
+    //   answer1: "",
+    //   answer2: "",
+    //   answer3: "",
+    //   answer4: "",
+    //   correctIndex: 0,
+    // })
     
     const itemData = {
-      prompt: event.target.prompt.value,
+      prompt: event.target.prompt,
       answers: [ 
-        event.target.answer1.value,
-        event.target.answer2.value,
-        event.target.answer3.value,
-        event.target.answer4.value,
+        event.target.answer1,
+        event.target.answer2,
+        event.target.answer3,
+        event.target.answer4,
       ],
-      correctIndex: event.target.correctIndex.value,
+      correctIndex: event.target.correctIndex,
     }
     
     fetch("http://localhost:4000/questions", {
